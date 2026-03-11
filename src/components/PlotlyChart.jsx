@@ -6,7 +6,8 @@ export default function PlotlyChart({ endpoint, title }) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(endpoint)
+        const baseUrl = import.meta.env.VITE_API_URL || '';
+        fetch(`${baseUrl}${endpoint}`)
             .then(res => {
                 if (!res.ok) throw new Error('Failed to fetch chart data');
                 return res.json();
