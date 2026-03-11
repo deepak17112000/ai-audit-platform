@@ -1,0 +1,205 @@
+/* PremiumDataGrid.css */
+
+.pdg-container {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pdg-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafaf9;
+}
+
+.pdg-title-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pdg-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdg-title-area h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    font-family: 'Inter', sans-serif;
+}
+
+.pdg-title-area p {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+    color: #64748b;
+    font-family: 'Inter', sans-serif;
+}
+
+.pdg-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.pdg-search svg {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+}
+
+.pdg-search input {
+    padding: 10px 16px 10px 36px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    width: 240px;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.pdg-search input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.pdg-table-wrapper {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.pdg-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+
+.pdg-table th {
+    position: sticky;
+    top: 0;
+    background: #f8fafc;
+    padding: 14px 24px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 10;
+}
+
+.pdg-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+    color: #334155;
+    font-weight: 500;
+}
+
+.pdg-table tr {
+    transition: background-color 0.15s;
+}
+
+.pdg-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.pdg-empty {
+    text-align: center;
+    padding: 60px 20px !important;
+    color: #94a3b8;
+}
+
+.pdg-empty p {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* Badges */
+.pdg-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.pdg-badge-danger {
+    background: #fef2f2;
+    color: #ef4444;
+    border: 1px solid #fecaca;
+}
+
+.pdg-badge-warning {
+    background: #fffbeb;
+    color: #f59e0b;
+    border: 1px solid #fde68a;
+}
+
+.pdg-badge-success {
+    background: #f0fdf4;
+    color: #10b981;
+    border: 1px solid #a7f3d0;
+}
+
+.pdg-badge-info {
+    background: #eff6ff;
+    color: #3b82f6;
+    border: 1px solid #bfdbfe;
+}
+
+.pdg-badge-neutral {
+    background: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.pdg-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    font-size: 13px;
+    color: #64748b;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.pdg-export-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: #3b82f6;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: color 0.2s;
+}
+
+.pdg-export-btn:hover {
+    color: #1d4ed8;
+}

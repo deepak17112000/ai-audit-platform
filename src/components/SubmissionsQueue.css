@@ -1,0 +1,574 @@
+/* ================================================================
+   SubmissionsQueue.css  —  AI Audit Platform  —  Reviewer Queue
+   ================================================================ */
+
+.sq-wrapper {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 0;
+    flex: 1;
+    overflow-y: auto;
+    background: #f4f6fb;
+}
+
+/* ── Stats Row ── */
+.sq-stats-row {
+    display: flex;
+    gap: 14px;
+}
+
+.sq-stat-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e8edf5;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.sq-stat-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.sqsc-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 0 2px 2px 0;
+}
+
+.sqsc-icon {
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--accent) 10%, white);
+    flex-shrink: 0;
+}
+
+.sqsc-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f1f3d;
+    line-height: 1;
+}
+
+.sqsc-label {
+    font-size: 12px;
+    color: #7a8aaa;
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+/* ── Main Content Layout ── */
+.sq-main-content {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+}
+
+/* ── Dashboard Grid ── */
+.sq-dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 3;
+    order: 2;
+    overflow-y: auto;
+}
+
+.sq-dash-widget {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e8edf5;
+    display: flex;
+    flex-direction: column;
+}
+
+.sq-dw-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a2e5a;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sq-dw-title svg {
+    color: #6b7a99;
+}
+
+.sq-dw-content {
+    flex: 1;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Custom Tooltip for Recharts */
+.sq-chart-tooltip {
+    background: #1a2e5a;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none !important;
+}
+
+/* Top Risk List */
+.sq-risk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sq-risk-item {
+    padding: 8px 12px;
+    background: #fdf2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sq-risk-item.medium {
+    background: #fffbeb;
+    border-color: #fde68a;
+}
+
+.sq-ri-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sq-ri-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    color: #1a2e5a;
+}
+
+.sq-ri-site {
+    font-size: 11px;
+    color: #5a6a8a;
+    font-weight: 600;
+}
+
+.sq-ri-flags {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #dc2626;
+}
+
+.sq-ri-action {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #1a2e5a;
+    transition: all 0.2s;
+}
+
+.sq-ri-action:hover {
+    background: #1a2e5a;
+    color: #fff;
+    border-color: #1a2e5a;
+}
+
+/* ── Table Card ── */
+.sq-table-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e8edf5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 7;
+    order: 1;
+    min-width: 0;
+}
+
+/* ── Controls ── */
+.sq-controls {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid #eef1f7;
+    flex-wrap: wrap;
+}
+
+.sq-tabs {
+    display: flex;
+    gap: 4px;
+    background: #f4f6fb;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.sq-tab {
+    padding: 7px 14px;
+    border-radius: 7px;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7a99;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.18s;
+    white-space: nowrap;
+}
+
+.sq-tab:hover {
+    background: #e8edf5;
+    color: #1a2e5a;
+}
+
+.sq-tab.active {
+    background: #fff;
+    color: var(--tab-color, #1a2e5a);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sq-tab-count {
+    font-size: 11px;
+    background: #eef1f7;
+    border-radius: 20px;
+    padding: 1px 7px;
+    font-weight: 700;
+    transition: background 0.18s;
+}
+
+.sq-tab.active .sq-tab-count {
+    background: color-mix(in srgb, var(--tab-color, #1a2e5a) 12%, white);
+    color: var(--tab-color, #1a2e5a);
+}
+
+.sq-toolbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sq-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.sq-search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.sq-search input {
+    padding: 8px 32px 8px 32px;
+    border: 1px solid #dde3f0;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #1a2e5a;
+    background: #f8fafd;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 260px;
+}
+
+.sq-search input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: #fff;
+}
+
+.sq-search-clear {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #9baac4;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px;
+}
+
+.sq-sort {
+    padding: 8px 12px;
+    border: 1px solid #dde3f0;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #1a2e5a;
+    background: #f8fafd;
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
+}
+
+/* ── Table ── */
+.sq-table-wrap {
+    overflow: auto;
+    flex: 1;
+}
+
+.sq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.sq-table thead tr {
+    background: #f8fafd;
+    border-bottom: 1px solid #eef1f7;
+}
+
+.sq-table th {
+    padding: 11px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #7a8aaa;
+    white-space: nowrap;
+}
+
+.sq-table tbody tr {
+    border-bottom: 1px solid #f0f3f9;
+    transition: background 0.15s;
+}
+
+.sq-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.sq-row:hover {
+    background: #f8fafd;
+}
+
+.sq-row.clickable {
+    cursor: pointer;
+}
+
+.sq-row.clickable:hover {
+    background: #eff6ff;
+}
+
+.sq-row.selected {
+    background: #eff6ff;
+    box-shadow: inset 3px 0 0 #2563eb;
+}
+
+.sq-table td {
+    padding: 13px 16px;
+    vertical-align: middle;
+    color: #2d3c5e;
+    white-space: nowrap;
+}
+
+/* Cell variants */
+.sq-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    color: #1a2e5a;
+    letter-spacing: 0.03em;
+}
+
+.sq-site {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.sq-site-icon {
+    font-size: 14px;
+}
+
+.sq-tech {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.sq-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e8edf5;
+}
+
+.sq-region {
+    color: #5a6a8a;
+}
+
+.sq-type {
+    color: #5a6a8a;
+    font-style: italic;
+}
+
+.sq-time {
+    color: #8a9abd;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.sq-reviewer {
+    color: #7a8aaa;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sq-badge {
+    display: inline-flex;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.sq-flags {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.sq-flag-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.sq-flag-chip.fail {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.sq-flag-chip.warn {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.sq-flag-chip.pass {
+    background: #f0fdf4;
+    color: #059669;
+}
+
+.sq-status-pill {
+    display: inline-flex;
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.sq-open-btn {
+    padding: 6px 14px;
+    background: #1a2e5a;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.15s;
+    white-space: nowrap;
+}
+
+.sq-open-btn:hover {
+    background: #2563eb;
+    transform: translateX(2px);
+}
+
+/* Empty state */
+.sq-empty-row {
+    text-align: center;
+    padding: 48px 16px !important;
+    color: #9baac4;
+}
+
+.sq-empty-row span {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.sq-empty-row p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ── Footer ── */
+.sq-footer {
+    padding: 12px 20px;
+    border-top: 1px solid #eef1f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #9baac4;
+    background: #f8fafd;
+}
+
+.sq-clear-filter {
+    background: none;
+    border: 1px solid #dde3f0;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #5a6a8a;
+    cursor: pointer;
+    font-weight: 600;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.sq-clear-filter:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
